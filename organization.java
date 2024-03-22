@@ -20,3 +20,22 @@ class Organization implements Cloneable {
         return super.clone();
     }
 }
+
+public class Main {
+    public static void main(String[] args) {
+        Organization org1 = new Organization("123", "ABC Inc.", "123 Main St.");
+        
+        try {
+            // Cloning org1 to org2
+            Organization org2 = (Organization) org1.clone();
+            // Printing details of org1
+            System.out.println("Details of org1:");
+            org1.printDetails();
+            // Printing details of org2
+            System.out.println("Details of org2 (cloned from org1):");
+            org2.printDetails();
+        } catch (CloneNotSupportedException e) {
+            e.printStackTrace();
+        }
+    }
+}
